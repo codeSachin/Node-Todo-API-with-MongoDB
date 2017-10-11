@@ -8,8 +8,9 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, db) => {
     console.log('Connected to MongoDB Server');
 
     db.collection('Todos').insertOne({
-        text: 'Walk the Dog man',
-        completed: true
+        text: 'Sachin Saini Yo',
+        completed: false,
+        age: 20
     }, (err, result) => {
         if(err){
             console.log('Could not insert the records and exiting now...');
