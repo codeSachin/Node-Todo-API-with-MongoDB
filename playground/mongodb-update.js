@@ -8,17 +8,31 @@ if(err){
 }
 console.log('Connected to MongoDB Server');
 
+// db.collection('Todos').findOneAndUpdate({
+//     _id: new ObjectID('59dcefca49bc50127ccd4726')
+// },
+// {
+//     $set: {
+//         completed: true
+// }
+// },
+// {
+//     returnOriginal: false
+// }).then((res)=>console.log(res));
+
 db.collection('Todos').findOneAndUpdate({
-    _id: new ObjectID('59dcefca49bc50127ccd4726')
-},
-{
-    $set: {
-        completed: true
-}
-},
-{
+    text: "Sachin Saini Yo"
+},{
+    $set:{
+        text: "Sachin Saini",
+        completed: true,
+    },
+    $inc: {
+        age:1
+    }
+},{
     returnOriginal: false
-}).then((res)=>console.log(res));
+}).then((res)=>console.log(res),(err)=>console.log(err));
 
 // db.close();
 });
